@@ -13,11 +13,12 @@
 
     <div id="clockTime"></div>
     <div id="clockDate"></div>
-    <div id="setTime">
-      <div id="setAlarmHour"></div>
-      <div id="setAlarmMin"></div>
-      <div id="setAlarmSec"></div>
-    </div>
+    <form name="myAlarm" action="" method="get">
+      <input type="number" id="setHour" min="1" max="24">
+      <input type="number" id="setMin" min="0" max="59">
+      <input type="button" value="Set Alarm" onclick="getAlarmTime(this.form)">
+    </form>
+    <!-- <p id="alarmNotice">Alarm will go off at <div id="setTime"></div></p> -->
 
     <script src="/js/main.js"></script>
   </body>

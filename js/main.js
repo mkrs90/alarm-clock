@@ -1,5 +1,7 @@
 
-//Function for Basic Clock Time
+//Function for Basic Clock Time (24hrs)
+const exactTime = document.getElementById('clockTime');
+
 function startTime() {
     const today = new Date();
     let h = today.getHours();
@@ -19,7 +21,25 @@ function doubleDigit(i) {
     return i;
 }
 
+//Function to change 24hr clock to 12hr clock
+    // function twelveHourClock() {}   
+
+
+
 //Function for Basic Clock Date
 
 
+
 //Function for Setting Alarm
+
+
+function getAlarmTime() {
+    let alarmHour = document.getElementById('setHour').value;
+    let alarmMin = document.getElementById('setMin').value;
+    alarmMin = doubleDigit(alarmMin);
+    let alarmTime = alarmHour + ":" + alarmMin + ":00";
+    console.log(alarmTime);
+}
+
+//Function for sounding the alarm!
+
