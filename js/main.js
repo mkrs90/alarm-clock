@@ -1,15 +1,15 @@
 
 //Function for Basic Clock Time (24hrs)
-
 function startTime() {
     const today = new Date();
-    let h = today.getHours();
-    let m = today.getMinutes();
-    let s = today.getSeconds();
-    m = doubleDigit(m);
-    s = doubleDigit(s);
-    document.getElementById("clockTime").innerHTML = h + ":" +  m  + ":" + s;
-    let exactTime = h + ":" +  m  + ":" + s;
+    let hour = today.getHours();
+    let min = today.getMinutes();
+    let sec = today.getSeconds();
+    hour = doubleDigit(hour);
+    min = doubleDigit(min);
+    sec = doubleDigit(sec);
+    document.getElementById("clockTime").innerHTML = hour + ":" +  min  + ":" + sec;
+    let exactTime = hour + ":" +  min  + ":" + sec;
     if (exactTime === alarmTime) {
         alert("sound alarm");
     }
@@ -27,9 +27,11 @@ function doubleDigit(i) {
 }
 //Function for Setting Alarm
 var alarmTime;
+
 function getAlarmTime() {
     let alarmHour = document.getElementById('setHour').value;
     let alarmMin = document.getElementById('setMin').value;
+    alarmHour = doubleDigit(alarmHour);
     alarmMin = doubleDigit(alarmMin);
     alarmTime = alarmHour + ":" + alarmMin + ":00";
     //return alarmTime;
@@ -37,11 +39,11 @@ function getAlarmTime() {
 
 const timeOfTheAlarm = getAlarmTime();
 
-//Function for sounding the alarm!
+// //Function for sounding the alarm!
 
-function soundTheAlarm(clocksTime, timeOfTheAlarm) {
-    if (clocksTime === timeOfTheAlarm) {
-        alert("The alarm has been sounded!");
-    };
-}
+// function soundTheAlarm(clocksTime, timeOfTheAlarm) {
+//     if (clocksTime === timeOfTheAlarm) {
+//         alert("The alarm has been sounded!");
+//     };
+// }
 
