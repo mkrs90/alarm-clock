@@ -1,4 +1,5 @@
-
+var alarmTime; //Global variable modified by getAlarmTime() that is used by startTime()
+var exactTime;
 //Function for Basic Clock Time (24hrs)
 function startTime() {
     const today = new Date();
@@ -9,15 +10,14 @@ function startTime() {
     min = doubleDigit(min);
     sec = doubleDigit(sec);
     document.getElementById("clockTime").innerHTML = hour + ":" +  min  + ":" + sec;
-    let exactTime = hour + ":" +  min  + ":" + sec;
+    exactTime = hour + ":" +  min  + ":" + sec;
+    //"sounds" the alarm
     if (exactTime === alarmTime) {
         alert("sound alarm");
     }
     setTimeout(startTime, 1000); //updates the seconds so you don't have to refresh page
-    //return exactTime;
 }
 
-const clocksTime = startTime();
 //fixes the issue when a number is less than 10 and only 1 digit
 function doubleDigit(i) {
     if (i < 10) {
@@ -25,25 +25,23 @@ function doubleDigit(i) {
     }
     return i;
 }
-//Function for Setting Alarm
-var alarmTime;
 
+//Sets the alarm to elements selected in html form. runs them through doubleDigit() to fix single digits and saves output to alarmTime
 function getAlarmTime() {
     let alarmHour = document.getElementById('setHour').value;
     let alarmMin = document.getElementById('setMin').value;
     alarmHour = doubleDigit(alarmHour);
     alarmMin = doubleDigit(alarmMin);
     alarmTime = alarmHour + ":" + alarmMin + ":00";
-    //return alarmTime;
 }
 
-const timeOfTheAlarm = getAlarmTime();
+//Changes time from military to standard
+// function changeClockType() {
 
-// //Function for sounding the alarm!
+// }
 
-// function soundTheAlarm(clocksTime, timeOfTheAlarm) {
-//     if (clocksTime === timeOfTheAlarm) {
-//         alert("The alarm has been sounded!");
-//     };
+//Clears Alarm fields when clicked
+// function clearAlarm() {
+    
 // }
 
