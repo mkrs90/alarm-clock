@@ -1,6 +1,5 @@
 
 //Function for Basic Clock Time (24hrs)
-const exactTime = document.getElementById('clockTime');
 
 function startTime() {
     const today = new Date();
@@ -10,9 +9,15 @@ function startTime() {
     m = doubleDigit(m);
     s = doubleDigit(s);
     document.getElementById("clockTime").innerHTML = h + ":" +  m  + ":" + s;
+    let exactTime = h + ":" +  m  + ":" + s;
+    if (exactTime === alarmTime) {
+        alert("sound alarm");
+    }
     setTimeout(startTime, 1000); //updates the seconds so you don't have to refresh page
+    //return exactTime;
 }
 
+const clocksTime = startTime();
 //fixes the issue when a number is less than 10 and only 1 digit
 function doubleDigit(i) {
     if (i < 10) {
@@ -20,26 +25,23 @@ function doubleDigit(i) {
     }
     return i;
 }
-
-//Function to change 24hr clock to 12hr clock
-    // function twelveHourClock() {}   
-
-
-
-//Function for Basic Clock Date
-
-
-
 //Function for Setting Alarm
-
-
+var alarmTime;
 function getAlarmTime() {
     let alarmHour = document.getElementById('setHour').value;
     let alarmMin = document.getElementById('setMin').value;
     alarmMin = doubleDigit(alarmMin);
-    let alarmTime = alarmHour + ":" + alarmMin + ":00";
-    console.log(alarmTime);
+    alarmTime = alarmHour + ":" + alarmMin + ":00";
+    //return alarmTime;
 }
 
+const timeOfTheAlarm = getAlarmTime();
+
 //Function for sounding the alarm!
+
+function soundTheAlarm(clocksTime, timeOfTheAlarm) {
+    if (clocksTime === timeOfTheAlarm) {
+        alert("The alarm has been sounded!");
+    };
+}
 
