@@ -1,6 +1,20 @@
 var alarmTime; //Global variable modified by getAlarmTime() that is used by startTime()
 var exactTime;
-const namesOfMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const namesOfMonth = [ //array used by todaysDate() to turn .getmonth method into string 
+    "January", 
+    "February", 
+    "March", 
+    "April", 
+    "May", 
+    "June", 
+    "July", 
+    "August", 
+    "September", 
+    "October", 
+    "November", 
+    "December"
+];
+
 //Function for Basic Clock Time (24hrs)
 function startTime() {
     const today = new Date();
@@ -14,7 +28,7 @@ function startTime() {
     exactTime = hour + ":" +  min  + ":" + sec;
     //"sounds" the alarm
     if (exactTime === alarmTime) {
-        alert("sound alarm");
+        alert("ALARM ALARM ALARM!");
     }
     setTimeout(startTime, 1000); //updates the seconds so you don't have to refresh page
 }
@@ -45,6 +59,15 @@ function getAlarmTime() {
     alarmHour = doubleDigit(alarmHour);
     alarmMin = doubleDigit(alarmMin);
     alarmTime = alarmHour + ":" + alarmMin + ":00";
+    alert("Alarm has been set");
+}
+
+//clears alarm
+function clearAlarm() {
+    let element = document.getElementById("alarmForm");
+    element.reset()
+    alarmTime = "00:00:00";
+    alert("Alarm has been cancelled");
 }
 
 
