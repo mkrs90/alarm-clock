@@ -1,5 +1,6 @@
 var alarmTime; //Global variable modified by getAlarmTime() that is used by startTime()
 var exactTime;
+const namesOfMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 //Function for Basic Clock Time (24hrs)
 function startTime() {
     const today = new Date();
@@ -26,6 +27,17 @@ function doubleDigit(i) {
     return i;
 }
 
+function todaysDate() {
+    const today = new Date();
+    let theDay = today.getDate();
+    let theMonth = today.getMonth(); //Dates are like an array January = 0, Feb = 1
+    let theYear = today.getFullYear();
+    theDay = doubleDigit(theDay);
+    //takes the number you got from the getMonth method and uses it to access the corresponding number in the array. Solves the Jan = 0 issue.    
+    let monthName = namesOfMonth[theMonth];
+    document.getElementById('clockDate').innerHTML = theDay + " " + monthName + " " + theYear;
+}
+
 //Sets the alarm to elements selected in html form. runs them through doubleDigit() to fix single digits and saves output to alarmTime
 function getAlarmTime() {
     let alarmHour = document.getElementById('setHour').value;
@@ -35,13 +47,5 @@ function getAlarmTime() {
     alarmTime = alarmHour + ":" + alarmMin + ":00";
 }
 
-//Changes time from military to standard
-// function changeClockType() {
 
-// }
-
-//Clears Alarm fields when clicked
-// function clearAlarm() {
-    
-// }
 
