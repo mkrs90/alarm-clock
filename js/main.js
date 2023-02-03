@@ -33,7 +33,7 @@ function startTime() {
     setTimeout(startTime, 1000); //updates the seconds so you don't have to refresh page
 }
 
-//fixes the issue when a number is less than 10 and only 1 digit
+//fixes the issue when a number is only 1 digit - used for formatting issues 
 function doubleDigit(i) {
     if (i < 10) {
         i = "0" + i;
@@ -62,7 +62,7 @@ function getAlarmTime() {
     alert("Alarm has been set");
 }
 
-//clears alarm
+//resets the form fields and cancels the alarm
 function clearAlarm() {
     let element = document.getElementById("alarmForm");
     element.reset()
@@ -70,5 +70,8 @@ function clearAlarm() {
     alert("Alarm has been cancelled");
 }
 
-
+/*
+known bugs
+- if you type the zero out in front of a number in the html fields it fails to set the alarm because it adds a zero to the 'STRING' that is less than 10. 
+*/
 
