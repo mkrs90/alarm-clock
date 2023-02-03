@@ -14,7 +14,18 @@ h1 {
     color: rgb(29, 30, 44);
 }
 
+#clockDate {
+    text-align: center;
+    font-size: 50px;
+    color: rgb(29, 30, 44);
+}
+
 #alarmForm {
     text-align: center;
+    margin-top: 30px;
+}
+
+#alarmBtn {
+    margin-top: 20px;
 }
 

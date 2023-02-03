@@ -8,23 +8,24 @@
     <link rel="stylesheet" href="/css/style.css"> 
   </head>
 
-  <body onload="startTime()">
+  <body onload="startTime(); todaysDate()">
     <h1>Alarm Clock</h1>
 
     <div id="clockTime"></div>
+    <br>
     <div id="clockDate"></div>
     <form id="alarmForm" name="myAlarm" action="" method="get">
-      <!-- <div>
-        <input type="button" value="Military Time" onclick="startTime()">
-        <input type="button" value="Standard Time" onclick="">      
-      </div> -->
+      <div>
+        <!-- <input type="button" value="Military Time" onclick="startTime()">
+        <input type="button" value="Standard Time" onclick="changeClockType()">       -->
+      </div>
       <div>
         <label for="setHour">Hour:</label>
         <input type="number" id="setHour" name="setHour" min="1" max="24">
         <label for="setMin">Minute:</label>
         <input type="number" id="setMin" name="setMin" min="0" max="59"> 
         <br>
-        <input type="button" value="Set Alarm" onclick="getAlarmTime(this.form)">
+        <input type="button" id="alarmBtn" value="Set Alarm" onclick="getAlarmTime(this.form)">
       </div>
     </form>
 
