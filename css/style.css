@@ -5,18 +5,21 @@ html {
 h1 {
     text-align: center;
     font-size: 100px;
+    font-family: Arial, Helvetica, sans-serif;
     color: rgb(29, 30, 44);
 }
 
 #clockTime {
     text-align: center;
     font-size: 200px;
+    font-family: monospace;
     color: rgb(29, 30, 44);
 }
 
 #clockDate {
     text-align: center;
     font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
     color: rgb(29, 30, 44);
 }
 
@@ -26,6 +29,12 @@ h1 {
 }
 
 #alarmBtn {
-    margin-top: 20px;
+    margin-right: 10px;
 }
+
+#alarmBtn, #clearAlarmBtn{
+    margin-top: 20px;
+    font-family: monospace;
+}
+
 
